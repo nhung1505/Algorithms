@@ -20,8 +20,8 @@ for doc in document:
     test_data.append(doc.getElementsByTagName("content")[0].childNodes[0].data.replace('\n', '.'))
 
 test_data = [''.join(char for char in i if char not in string.punctuation) for i in test_data]    
-test_data = test_data[3000:]
-test_label = test_label[3000:]
+test_data = test_data[2500:]
+test_label = test_label[2500:]
 vectors = pickle.load(open("tfidf_model", "rb"))
 test_vec = vectors.transform(test_data)
 prediction = load_model.predict(test_vec)
