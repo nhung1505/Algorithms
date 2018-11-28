@@ -2,11 +2,12 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 import numpy as np
 from xml.dom import minidom
 import string
 import _pickle as pickle
+from sklearn.naive_bayes import MultinomialNB
 
 
 a = minidom.parse('traindatatopic.xml')
@@ -57,6 +58,9 @@ train_vec = vectors.fit_transform(train_data)
 
 model = svm.SVC(kernel='linear')
 model.fit(train_vec, train_label)
+
+# model = MultinomialNB()
+# model.fit(train_vec, train_label)
 
 filename = 'model'
 pickle.dump(model, open(filename, 'wb'))

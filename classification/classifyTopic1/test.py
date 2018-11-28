@@ -2,7 +2,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn import svm
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 import numpy as np
 from xml.dom import minidom
 import string
@@ -26,8 +26,6 @@ vectors = pickle.load(open("tfidf_model", "rb"))
 test_vec = vectors.transform(test_data)
 prediction = load_model.predict(test_vec)
 print (classification_report(test_label, prediction))
-
-
 print("có nhập câu???")
 t = input()
 test_data_exam = []
