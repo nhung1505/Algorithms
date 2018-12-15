@@ -6,7 +6,7 @@ while True:
         test = [int(char) for char in number]
         break
     except ValueError:
-        print("day so ban nhap khong dung :( vui vong nhap lai")
+        print("day so ban nhap khong dung vui vong nhap lai")
         number = input()
         continue
 print(test)
