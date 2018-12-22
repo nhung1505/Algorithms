@@ -12,13 +12,17 @@ while True:
 print(test)
 count = [0]*(len(test))
 count[0] = 1
-if (test[0]*10 + test[1]) < 27:
-    count[1] = 2
+if len(test) == 1:
+    count = 1
+    print("1")
 else:
-    count[1] = 1
-for i in range(2, len(test)):
-    A = 0
-    if (test[i-1]*10 + test[i])<= 27:
-        A =  count[i-2]
-    count[i] = count[i-1] + A
-print(count[len(count)-1])
+    if (test[0]*10 + test[1]) < 27:
+        count[1] = 2
+    else:
+        count[1] = 1
+    for i in range(2, len(test)):
+        A = 0
+        if (test[i-1]*10 + test[i])<= 27:
+            A =  count[i-2]
+        count[i] = count[i-1] + A
+    print(count[len(count)-1])
